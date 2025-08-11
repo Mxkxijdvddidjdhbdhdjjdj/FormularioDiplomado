@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción Diplomados - ELYON YIREH</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Inscripción Diplomados</h1>
+            <p>ELYON YIREH - PA2025</p>
+        </div>
+
+        <form class="form-container" id="diplomadoForm">
+            <div class="success-message" id="successMessage">
+                ¡Inscripción enviada exitosamente! Recibirá una confirmación por correo electrónico.
+            </div>
+
+            <div class="form-group">
+                <label for="nombres">Nombres y Apellidos <span class="required">*</span></label>
+                <input type="text" id="nombres" name="nombres" required>
+                <div class="error-text" id="nombres-error">Por favor ingrese nombres y apellidos completos (mínimo 3 caracteres)</div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="documento">Documento <span class="required">*</span></label>
+                    <input type="text" id="documento" name="documento" required maxlength="15" placeholder="Ej: 12345678">
+                    <div class="error-text" id="documento-error">El documento debe tener al menos 7 dígitos</div>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono <span class="required">*</span></label>
+                    <div class="phone-input-container">
+                        <span class="phone-prefix">+57</span>
+                        <input type="text" id="telefono" name="telefono" class="phone-input" required maxlength="10" placeholder="3001234567">
+                    </div>
+                    <div class="error-text" id="telefono-error">El teléfono debe tener 10 dígitos</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo Electrónico <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                <div class="error-text" id="email-error">Por favor ingrese un correo electrónico válido</div>
+            </div>
+
+            <div class="form-group">
+                <label for="carrera">Carrera Técnica <span class="required">*</span></label>
+                <select id="carrera" name="carrera" required>
+                    <option value="">Seleccione su carrera</option>
+                    <option value="criminalistica">Criminalística</option>
+                    <option value="cocina">Cocina</option>
+                    <option value="seguridad_industrial">Seguridad Industrial/Ocupacional</option>
+                    <option value="logistica_portuaria">Logística Portuaria</option>
+                    <option value="farmacia">Farmacia</option>
+                    <option value="cosmetologia">Cosmetología</option>
+                    <option value="veterinaria">Veterinaria</option>
+                    <option value="diseño_sistemas">Diseño/Sistemas</option>
+                    <option value="hoteleria_turismo">Hotelería y Turismo</option>
+                    <option value="administracion_salud">Administración en Salud</option>
+                    <option value="administracion_empresas">Administración de Empresas</option>
+                    <option value="mecanica_diesel">Mecánica Diesel</option>
+                    <option value="electronica">Electrónica</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="horario">Horario Disponible <span class="required">*</span></label>
+                <select id="horario" name="horario" required disabled>
+                    <option value="">Primero seleccione su carrera</option>
+                </select>
+                <div class="disabled-hint" id="horario-hint">Seleccione una carrera para ver los horarios disponibles</div>
+            </div>
+
+            <div class="form-group">
+                <label for="diplomado">Diplomado Disponible <span class="required">*</span></label>
+                <select id="diplomado" name="diplomado" required disabled>
+                    <option value="">Primero seleccione carrera y horario</option>
+                </select>
+                <div class="disabled-hint" id="diplomado-hint">Seleccione carrera y horario para ver los diplomados disponibles</div>
+                
+                <div id="diplomado-info" class="diplomado-info">
+                    <h4>Información del Diplomado</h4>
+                    <div id="horario-details"></div>
+                </div>
+            </div>
+
+            <div class="terms">
+                <label>
+                    <input type="checkbox" id="terminos" name="terminos" required>
+                    Acepto los términos y condiciones <span class="required">*</span>
+                </label>
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar Inscripción</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

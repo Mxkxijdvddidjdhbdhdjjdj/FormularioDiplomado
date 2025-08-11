@@ -1,0 +1,247 @@
+/* ===== RESET Y ESTILOS BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #333;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.container {
+    max-width: 700px;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: #2E86AB;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.header p {
+    opacity: 0.9;
+}
+
+/* ===== FORMULARIO ===== */
+.form-container {
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* ===== ETIQUETAS Y CAMPOS ===== */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #2E86AB;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #A4C639;
+}
+
+.required {
+    color: #dc3545;
+}
+
+/* ===== CAMPO TELÉFONO ===== */
+.phone-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.phone-prefix {
+    position: absolute;
+    left: 10px;
+    color: #666;
+    font-weight: 500;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.phone-input {
+    padding-left: 45px !important;
+}
+
+/* ===== INFORMACIÓN DEL DIPLOMADO ===== */
+.diplomado-info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border-left: 4px solid #A4C639;
+    display: none;
+}
+
+.diplomado-info h4 {
+    color: #2E86AB;
+    margin-bottom: 8px;
+}
+
+.diplomado-info p {
+    margin: 3px 0;
+    font-size: 0.9rem;
+}
+
+/* ===== BOTÓN DE ENVÍO ===== */
+.btn-submit {
+    background: #A4C639;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background: #8FB32D;
+}
+
+.btn-submit:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* ===== TÉRMINOS Y CONDICIONES ===== */
+.terms {
+    margin: 20px 0;
+    font-size: 0.9rem;
+}
+
+.terms input {
+    width: auto;
+    margin-right: 8px;
+}
+
+/* ===== ESTADOS DE ERROR ===== */
+.error {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1) !important;
+}
+
+.error-text {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none;
+}
+
+/* ===== MENSAJES Y HINTS ===== */
+.disabled-hint {
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+}
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #c3e6cb;
+    margin-bottom: 20px;
+    display: none;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+/* Tablets */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-container {
+        padding: 20px;
+    }
+    
+    .header {
+        padding: 20px 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+    
+    .container {
+        border-radius: 5px;
+    }
+    
+    .form-container {
+        padding: 15px;
+    }
+    
+    .header {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.3rem;
+    }
+    
+    input, select, textarea {
+        padding: 12px 10px;
+        font-size: 16px; /* Evita zoom en iOS */
+    }
+    
+    .phone-input {
+        padding-left: 45px !important;
+        font-size: 16px;
+    }
+}
